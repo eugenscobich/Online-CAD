@@ -20,6 +20,8 @@
 	</build>
 	<modules>
 		<module>OnlineCADModelLayer</module>
+		<module>OnlineCADDAOLayer</module>
+		<module>OnlineCADServiceLayer</module>
 		<!-- <module>RecruitmentQuizService</module> <module>RecruitmentQuizWeb</module> -->
 	</modules>
 </project>

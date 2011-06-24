@@ -5,4 +5,41 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>OnlineCADServiceLayer</name>
   <description>OnlineCADServiceLayer</description>
+  <dependencies>
+  	<dependency>
+  		<groupId>org.onlinecad.dao</groupId>
+  		<artifactId>OnlineCADDAOLayer</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.onlinecad.util</groupId>
+  		<artifactId>OnlineCADUtilLayer</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>junit</groupId>
+  		<artifactId>junit</artifactId>
+  		<version>4.8.2</version>
+  		<scope>test</scope>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.springframework</groupId>
+  		<artifactId>org.springframework.test</artifactId>
+  		<version>3.0.4.RELEASE</version>
+  		<scope>test</scope>
+  	</dependency>
+  </dependencies>
+  <repositories>
+		<repository>
+			<id>com.springsource.repository.bundles.release</id>
+			<name>SpringSource Enterprise Bundle Repository - SpringSource Releases</name>
+			<url>http://repository.springsource.com/maven/bundles/release</url>
+		</repository>
+
+		<repository>
+			<id>com.springsource.repository.bundles.external</id>
+			<name>SpringSource Enterprise Bundle Repository - External Releases</name>
+			<url>http://repository.springsource.com/maven/bundles/external</url>
+		</repository>
+	</repositories>
 </project>

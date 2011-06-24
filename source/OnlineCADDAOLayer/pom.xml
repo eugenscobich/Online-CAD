@@ -1,8 +1,48 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>org.onlinecad.dao</groupId>
-  <artifactId>OnlineCADDAOLayer</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <name>OnlineCADDAOLayer</name>
-  <description>OnlineCADDAOLayer</description>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.onlinecad.dao</groupId>
+	<artifactId>OnlineCADDAOLayer</artifactId>
+	<version>${org.onlinecad-version}</version>
+	<name>OnlineCADDAOLayer</name>
+	<description>OnlineCADDAOLayer</description>
+	
+	<properties>
+		<org.onlinecad-version>0.0.1-SNAPSHOT</org.onlinecad-version>
+		<org.springframework-version>3.0.4.RELEASE</org.springframework-version>
+	</properties>
+	
+	<dependencies>
+		<dependency>
+			<groupId>org.onlinecad</groupId>
+			<artifactId>OnlineCADModelLayer</artifactId>
+			<version>${org.onlinecad-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>org.springframework.test</artifactId>
+			<version>${org.springframework-version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.8.2</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+	
+	<repositories>
+		<repository>
+			<id>com.springsource.repository.bundles.release</id>
+			<name>SpringSource Enterprise Bundle Repository - SpringSource Releases</name>
+			<url>http://repository.springsource.com/maven/bundles/release</url>
+		</repository>
+
+		<repository>
+			<id>com.springsource.repository.bundles.external</id>
+			<name>SpringSource Enterprise Bundle Repository - External Releases</name>
+			<url>http://repository.springsource.com/maven/bundles/external</url>
+		</repository>
+	</repositories>
 </project>

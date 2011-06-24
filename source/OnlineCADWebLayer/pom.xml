@@ -4,12 +4,13 @@
 	<groupId>org.onlinecad.web</groupId>
 	<artifactId>OnlineCADWebLayer</artifactId>
 	<packaging>war</packaging>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>${org.onlinecad-version}</version>
 	<name>OnlineCADWebLayer Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
 		<java-version>1.6</java-version>
+		<org.onlinecad-version>0.0.1-SNAPSHOT</org.onlinecad-version>
 		<org.apache.tiles-version>2.2.2</org.apache.tiles-version>
 		<org.springframework-version>3.0.4.RELEASE</org.springframework-version>
 	</properties>

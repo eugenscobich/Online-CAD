@@ -1,45 +1,40 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>org.onlinecad.service</groupId>
-  <artifactId>OnlineCADServiceLayer</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <name>OnlineCADServiceLayer</name>
-  <description>OnlineCADServiceLayer</description>
-  <dependencies>
-  	<dependency>
-  		<groupId>org.onlinecad.dao</groupId>
-  		<artifactId>OnlineCADDAOLayer</artifactId>
-  		<version>0.0.1-SNAPSHOT</version>
-  	</dependency>
-  	<dependency>
-  		<groupId>org.onlinecad.util</groupId>
-  		<artifactId>OnlineCADUtilLayer</artifactId>
-  		<version>0.0.1-SNAPSHOT</version>
-  	</dependency>
-  	<dependency>
-  		<groupId>junit</groupId>
-  		<artifactId>junit</artifactId>
-  		<version>4.8.2</version>
-  		<scope>test</scope>
-  	</dependency>
-  	<dependency>
-  		<groupId>org.springframework</groupId>
-  		<artifactId>org.springframework.test</artifactId>
-  		<version>3.0.4.RELEASE</version>
-  		<scope>test</scope>
-  	</dependency>
-  </dependencies>
-  <repositories>
-		<repository>
-			<id>com.springsource.repository.bundles.release</id>
-			<name>SpringSource Enterprise Bundle Repository - SpringSource Releases</name>
-			<url>http://repository.springsource.com/maven/bundles/release</url>
-		</repository>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.onlinecad.service</groupId>
+	<artifactId>OnlineCADServiceLayer</artifactId>
+	<version>${org.onlinecad-version}</version>
+	<name>OnlineCADServiceLayer</name>
+	<description>OnlineCADServiceLayer</description>
 
-		<repository>
-			<id>com.springsource.repository.bundles.external</id>
-			<name>SpringSource Enterprise Bundle Repository - External Releases</name>
-			<url>http://repository.springsource.com/maven/bundles/external</url>
-		</repository>
-	</repositories>
+	<properties>
+		<java-version>1.6</java-version>
+		<maven.test.failure.ignore>true</maven.test.failure.ignore>
+		<org.onlinecad-version>0.0.1-SNAPSHOT</org.onlinecad-version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.onlinecad.dao</groupId>
+			<artifactId>OnlineCADDAOLayer</artifactId>
+			<version>${org.onlinecad-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.onlinecad.util</groupId>
+			<artifactId>OnlineCADUtilLayer</artifactId>
+			<version>${org.onlinecad-version}</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>${java-version}</source>
+					<target>${java-version}</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 </project>

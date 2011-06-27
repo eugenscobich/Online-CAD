@@ -22,7 +22,7 @@ public class SimplePersistenceTest {
 	@Transactional
 	public void testAddTechnology() {
 		Layer layer = new Layer();
-		layer.setAnswer("dfsdfsd");
+		layer.setName("dfsdfsd");
 		sessionFactory.getCurrentSession().save(layer);
 		assertNotNull(layer.getId());
 	}

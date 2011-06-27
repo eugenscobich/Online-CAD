@@ -14,8 +14,8 @@ public class Layer {
 	@Column(name = "Id")
 	private Integer id;
 
-	@Column(name = "Answer")
-	private String answer;
+	@Column(name = "name")
+	private String name;
 
 	public Integer getId() {
 		return id;
@@ -25,12 +25,12 @@ public class Layer {
 		this.id = id;
 	}
 
-	public String getAnswer() {
-		return answer;
+	public String getName() {
+		return name;
 	}
 
-	public void setAnswer(String answer) {
-		this.answer = answer;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 }

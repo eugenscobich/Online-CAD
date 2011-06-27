@@ -24,6 +24,7 @@ public class LayerDAO {
 	}
 
 	public Layer get(Serializable id) {
+
 		return (Layer) getSession().get(Layer.class, id);
 	}
 

@@ -21,7 +21,7 @@ public class SimpleDAOTest {
 	@Transactional
 	public void testSave() {
 		Layer layer = new Layer();
-		layer.setAnswer("dfsdfsd");
+		layer.setName("dfsdfsd");
 		layerDAO.save(layer);
 		assertNotNull(layer.getId());
 	}

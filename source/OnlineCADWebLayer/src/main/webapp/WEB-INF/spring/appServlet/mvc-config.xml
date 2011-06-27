@@ -13,11 +13,10 @@
 
     <mvc:default-servlet-handler /> 
 
-	<!-- Scans within the base package of the application for @Components to configure as beans -->
+
+	<!-- Scans within the base package of the application for @Components to 
+		configure as beans -->
 	<context:component-scan base-package="org.onlinecad.web" />
-
-	<mvc:view-controller path="/" view-name="home" />
-
 	
     <!-- Resolves logical view names returned by Controllers to Tiles; a view name to resolve is treated as the name of a tiles definition -->
     <bean id="tilesViewResolver" class="org.springframework.js.ajax.AjaxUrlBasedViewResolver">

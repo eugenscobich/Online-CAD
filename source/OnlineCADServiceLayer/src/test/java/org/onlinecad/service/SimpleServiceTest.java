@@ -21,7 +21,7 @@ public class SimpleServiceTest {
 	@Transactional
 	public void testSave() {
 		Layer layer = new Layer();
-		layer.setAnswer("dfsdfsd");
+		layer.setName("dfsdfsd");
 		layerService.save(layer);
 		assertNotNull(layer.getId());
 	}

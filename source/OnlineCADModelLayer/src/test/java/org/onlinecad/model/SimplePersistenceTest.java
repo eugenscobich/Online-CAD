@@ -43,7 +43,7 @@ public class SimplePersistenceTest {
 		DimensionStyle ds = new DimensionStyle();
 		sessionFactory.getCurrentSession().save(ds);
 		TextStyle ts = new TextStyle();
-		
+		sessionFactory.getCurrentSession().save(ts);
 
 		LinearDimension ld = new LinearDimension();
 		ld.setDimensionStyle(ds);

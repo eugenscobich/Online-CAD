@@ -72,7 +72,7 @@
 		<dependency>
 			<groupId>org.onlinecad.service</groupId>
 			<artifactId>OnlineCADServiceLayer</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>${org.onlinecad-version}</version>
 			<exclusions>
 				<exclusion>
 					<artifactId>jcl-over-slf4j</artifactId>
@@ -80,9 +80,45 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
+		
+		<!-- Security -->
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-core</artifactId>
+			<version>3.1.0.M1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-config</artifactId>
+			<version>3.1.0.M1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-taglibs</artifactId>
+			<version>3.1.0.M1</version>
+		</dependency>
+		
 	</dependencies>
 
+
+
 	<repositories>
+	
+	<!-- For developing against latest Spring milestones -->
+		<repository>
+			<id>org.springframework.maven.milestone</id>
+			<name>Spring Maven Milestone Repository</name>
+			<url>http://maven.springframework.org/milestone</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+	
+	
+	
 		<repository>
 			<id>com.springsource.repository.bundles.release</id>
 			<name>SpringSource Enterprise Bundle Repository - SpringSource Releases</name>
@@ -94,6 +130,7 @@
 			<name>SpringSource Enterprise Bundle Repository - External Releases</name>
 			<url>http://repository.springsource.com/maven/bundles/external</url>
 		</repository>
+
 	</repositories>
 
 	<build>

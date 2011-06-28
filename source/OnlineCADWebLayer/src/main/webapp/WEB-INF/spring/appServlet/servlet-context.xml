@@ -9,5 +9,6 @@
 	<!-- Imports user-defined @Controller beans that process client requests -->
 
 	<beans:import resource="mvc-config.xml" />
+	<beans:import resource="security-config.xml" />
 	
 </beans:beans>

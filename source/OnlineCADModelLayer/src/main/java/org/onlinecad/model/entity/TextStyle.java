@@ -9,6 +9,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "TextStyle")
 public class TextStyle {
+
 	@Id
 	@GeneratedValue
 	@Column(name = "Id")

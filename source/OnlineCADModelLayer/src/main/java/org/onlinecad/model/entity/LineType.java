@@ -3,11 +3,13 @@ package org.onlinecad.model.entity;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CollectionTable;
 import javax.persistence.Column;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.Table;
 
 @Entity
@@ -20,6 +22,8 @@ public class LineType {
 	private Integer id;
 
 	@ElementCollection
+	@CollectionTable(name = "LinePatern", joinColumns = @JoinColumn(name = "Id"))
+	@Column(name = "Lenght")
 	private List<Double> linePatern = new ArrayList<Double>();
 
 	// ============ Properties Section ============

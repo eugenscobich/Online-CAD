@@ -31,4 +31,5 @@ public class Point extends DrawingEntity {
 	public void setY(Double y) {
 		this.y = y;
 	}
+
 }

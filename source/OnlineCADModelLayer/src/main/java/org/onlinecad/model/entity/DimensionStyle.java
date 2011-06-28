@@ -11,6 +11,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "DimensionStyle")
 public class DimensionStyle {
+
 	@Id
 	@GeneratedValue
 	@Column(name = "Id")

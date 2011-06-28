@@ -3,14 +3,14 @@ package org.onlinecad.model.entity;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "Ellipse")
 public class Ellipse extends DrawingEntity {
 
-	@ManyToOne
+	@OneToOne
 	@JoinColumn(name = "CenterPointId")
 	private Point centerPoint;
 

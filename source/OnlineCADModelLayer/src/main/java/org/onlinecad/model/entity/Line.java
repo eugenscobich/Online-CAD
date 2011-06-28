@@ -2,18 +2,18 @@ package org.onlinecad.model.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "Line")
 public class Line extends DrawingEntity {
 
-	@ManyToOne
+	@OneToOne
 	@JoinColumn(name = "StartPointId")
 	private Point startPoint;
 
-	@ManyToOne
+	@OneToOne
 	@JoinColumn(name = "EndPointId")
 	private Point endPoint;
 

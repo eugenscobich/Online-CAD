@@ -3,6 +3,7 @@ package org.onlinecad.model.entity;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,6 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -27,7 +29,7 @@ public class Layer {
 	@Column(name = "isVisible")
 	private Boolean isVisible;
 
-	@ManyToOne
+	@OneToOne
 	@JoinColumn(name = "ColorId")
 	private Color color;
 
@@ -35,7 +37,7 @@ public class Layer {
 	@JoinColumn(name = "LineTypeId")
 	private LineType lineType;
 
-	@OneToMany()
+	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name = "LayerId")
 	private List<DrawingEntity> drawingEntities = new ArrayList<DrawingEntity>();
 

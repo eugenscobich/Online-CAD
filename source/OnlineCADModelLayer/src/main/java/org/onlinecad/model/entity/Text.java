@@ -4,13 +4,15 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "Text")
 public class Text extends DrawingEntity {
 
-	@Column(name = "PositionPointId")
+	@OneToOne
+	@JoinColumn(name = "PositionPointId")
 	private Point position;
 
 	@Column(name = "Text")

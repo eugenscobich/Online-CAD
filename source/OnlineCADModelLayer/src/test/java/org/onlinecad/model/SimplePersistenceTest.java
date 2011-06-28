@@ -11,7 +11,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
-@ContextConfiguration
+@ContextConfiguration(locations = { "classpath:/spring/dataModel-context.xml" })
 @RunWith(SpringJUnit4ClassRunner.class)
 public class SimplePersistenceTest {
 

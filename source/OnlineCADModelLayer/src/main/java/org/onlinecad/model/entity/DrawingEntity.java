@@ -1,31 +1,19 @@
 package org.onlinecad.model.entity;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.persistence.Column;
-import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.MappedSuperclass;
 
-@Entity
-@Table(name = "Layer")
-public class Layer {
+@MappedSuperclass
+public abstract class DrawingEntity {
 
 	@Id
 	@GeneratedValue
 	@Column(name = "Id")
 	private Integer id;
-
-	@Column(name = "Name")
-	private String name;
-
-	@Column(name = "isVisible")
-	private Boolean isVisible;
 
 	@ManyToOne
 	@JoinColumn(name = "ColorId")
@@ -35,9 +23,9 @@ public class Layer {
 	@JoinColumn(name = "LineTypeId")
 	private LineType lineType;
 
-	@OneToMany()
+	@ManyToOne
 	@JoinColumn(name = "LayerId")
-	private List<DrawingEntity> drawingEntities = new ArrayList<DrawingEntity>();
+	private Layer layer;
 
 	// ============ Properties Section ============
 
@@ -47,22 +35,6 @@ public class Layer {
 
 	public void setId(Integer id) {
 		this.id = id;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public Boolean getIsVisible() {
-		return isVisible;
-	}
-
-	public void setIsVisible(Boolean isVisible) {
-		this.isVisible = isVisible;
 	}
 
 	public Color getColor() {
@@ -81,12 +53,12 @@ public class Layer {
 		this.lineType = lineType;
 	}
 
-	public List<DrawingEntity> getDrawingEntities() {
-		return drawingEntities;
+	public Layer getLayer() {
+		return layer;
 	}
 
-	public void setDrawingEntities(List<DrawingEntity> drawingEntities) {
-		this.drawingEntities = drawingEntities;
+	public void setLayer(Layer layer) {
+		this.layer = layer;
 	}
 
 }

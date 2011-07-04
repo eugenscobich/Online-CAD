@@ -4,5 +4,16 @@
        "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
 
 <tiles-definitions>
-	<definition name="home" template="/WEB-INF/views/home/home.jsp"/>
+	<definition name="home" extends="main-layout">
+		<put-attribute name="main-container" value="home-page" />
+	</definition>
+	<definition name="home-page" template="/WEB-INF/views/home/home.jsp" />
+	
+	
+	<definition name="testhome" extends="main-layout">
+		<put-attribute name="main-container" value="home-test-page" />
+	</definition>
+	<definition name="home-test-page" template="/WEB-INF/views/home/testhome.jsp" />
+	
+	
 </tiles-definitions>

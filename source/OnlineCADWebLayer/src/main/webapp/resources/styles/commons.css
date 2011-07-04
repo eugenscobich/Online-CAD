@@ -1,0 +1,143 @@
+/* Body and tag styles */
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font: 76% Verdana, Tahoma, Arial, sans-serif;
+	line-height: 1.4em;
+	text-align: center;
+	color: #303030;
+	background: #e8eaec;
+}
+
+
+img.left {
+	float: left;
+	margin: 0 12px 5px 0;
+}
+
+div img.center {
+	position: inherit;
+	margin-top: 200px;
+}
+
+}
+img.right {
+	float: right;
+	margin: 0 0 5px 12px;
+}
+
+/* Header and navigation styles */
+.container {
+	width: 760px;
+	min-height: 500px;
+	margin: 20px auto;
+	padding: 1px 0;
+	text-align: center;
+	background: #ffffff;
+	color: #303030;
+	border: 2px solid #a0a0a0;
+}
+
+.header {
+	height: 110px;
+	width: 758px;
+	margin: 0 1px 1px 1px;
+	background: #467aa7;
+	color: #ffffff;
+}
+
+.header h1 {
+	padding: 20px 0;
+	font-size: 2.4em;
+	background-color: inherit;
+	color: #ffffff;
+	letter-spacing: -2px;
+	font-weight: normal;
+}
+
+.header h2 {
+	font-size: 1.4em;
+	background-color: inherit;
+	color: #f0f2f4;
+	letter-spacing: -1px;
+	font-weight: normal;
+}
+
+.navigation {
+	height: 2.2em;
+	line-height: 2.2em;
+	width: 758px;
+	margin: 0 1px;
+	background: #578bb8;
+	color: #ffffff;
+}
+
+.navigation li {
+	float: left;
+	list-style-type: none;
+	border-right: 1px solid #ffffff;
+	white-space: nowrap;
+}
+
+.navigation li a {
+	display: block;
+	padding: 0 10px;
+	font-size: 0.8em;
+	font-weight: normal;
+	text-transform: uppercase;
+	text-decoration: none;
+	background-color: inherit;
+	color: #ffffff;
+}
+
+* html .navigation a {
+	width: 1%;
+}
+
+.navigation .selected, .navigation a:hover{
+	background: #80b0da;
+	color: #ffffff;
+	text-decoration: none;
+}
+
+/* Content styles */
+.content {
+	float: left;
+	font-size: 0.9em;
+	padding: 20px 0 0 20px;
+	width: 738px;
+	min-height: 480px;
+	margin: 0 1px 1px 1px;
+}
+
+.content h2 {
+	display: block;
+	font-size: 1.7em;
+	font-weight: normal;
+	letter-spacing: -1px;
+	color: #505050;
+	background-color: inherit;
+}
+
+/* Footer styles */
+.footer {
+	clear: both;
+	width: 758px;
+	padding: 5px 0;
+	margin: 0 1px;
+	font-size: 0.9em;
+	color: #f0f0f0;
+	background: #467aa7;
+}
+
+.footer h2 {
+	margin: 0 0 0 20px;
+	background-color: inherit;
+	color: #f0f2f4;
+	letter-spacing: -1px;
+	font-weight: normal;
+	text-align: center;
+}

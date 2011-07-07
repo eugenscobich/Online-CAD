@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
 	xmlns:context="http://www.springframework.org/schema/context"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
 		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd	
@@ -9,37 +8,53 @@
 
 	<mvc:annotation-driven />
 
-	<mvc:resources mapping="/resources/**" location="/resources/, classpath:/META-INF/web-resources/" />
+	<mvc:resources mapping="/resources/**"
+		location="/resources/, classpath:/META-INF/web-resources/" />
 
-    <mvc:default-servlet-handler /> 
+	<mvc:default-servlet-handler />
 
 
 	<!-- Scans within the base package of the application for @Components to 
 		configure as beans -->
 	<context:component-scan base-package="org.onlinecad.web" />
-	
-    <!-- Resolves logical view names returned by Controllers to Tiles; a view name to resolve is treated as the name of a tiles definition -->
-    <bean id="tilesViewResolver" class="org.springframework.js.ajax.AjaxUrlBasedViewResolver">
-        <property name="viewClass" value="org.springframework.webflow.mvc.view.FlowAjaxTilesView"/>
-    </bean>
 
-    <!-- Configures the Tiles layout system -->
-    <bean id="tilesConfigurer" class="org.springframework.web.servlet.view.tiles2.TilesConfigurer">
-        <property name="definitions">
-            <list>
-                <value>/WEB-INF/**/views.xml</value>
-            </list>
-        </property>
-    </bean>
+
+	<mvc:view-controller path="/login" view-name="login" />
+
+
+	<!-- Resolves logical view names returned by Controllers to Tiles; a view 
+		name to resolve is treated as the name of a tiles definition -->
+	<bean id="tilesViewResolver" class="org.springframework.js.ajax.AjaxUrlBasedViewResolver">
+		<property name="viewClass"
+			value="org.springframework.webflow.mvc.view.FlowAjaxTilesView" />
+	</bean>
+
+
+	<bean id="messageSource"
+		class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basenames" value="messages" />
+	</bean>
+
+
+	<!-- Configures the Tiles layout system -->
+	<bean id="tilesConfigurer"
+		class="org.springframework.web.servlet.view.tiles2.TilesConfigurer">
+		<property name="definitions">
+			<list>
+				<value>/WEB-INF/**/views.xml</value>
+			</list>
+		</property>
+	</bean>
 
 	<!-- i18n -->
 	<mvc:interceptors>
 		<bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
-	        <property name="paramName" value="locale"/>
+			<property name="paramName" value="locale" />
 		</bean>
 	</mvc:interceptors>
-	<bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver">
-		<property name="defaultLocale" value="en" />
+	<bean id="localeResolver"
+		class="org.springframework.web.servlet.i18n.SessionLocaleResolver">
+		<property name="defaultLocale" value="ru" />
 	</bean>
 
 </beans>

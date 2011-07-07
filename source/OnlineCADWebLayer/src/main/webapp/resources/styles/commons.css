@@ -69,7 +69,7 @@ img.right {
 .navigation {
 	height: 2.2em;
 	line-height: 2.2em;
-	width: 758px;
+	width: 759px;
 	margin: 0 1px;
 	background: #578bb8;
 	color: #ffffff;
@@ -82,19 +82,22 @@ img.right {
 	white-space: nowrap;
 }
 
-.navigation li a {
+
+.navigation ul.right li {
+	float: right;
+	list-style-type: none;
+	border-left: 1px solid #ffffff;
+	white-space: nowrap;
+}
+
+
+
+.navigation li a, .navigation ul.right li a{
 	display: block;
 	padding: 0 10px;
-	font-size: 0.8em;
-	font-weight: normal;
-	text-transform: uppercase;
 	text-decoration: none;
 	background-color: inherit;
 	color: #ffffff;
-}
-
-* html .navigation a {
-	width: 1%;
 }
 
 .navigation .selected, .navigation a:hover{

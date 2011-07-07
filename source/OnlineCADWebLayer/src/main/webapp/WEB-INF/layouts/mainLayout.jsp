@@ -1,6 +1,7 @@
+<%@ page contentType="text/html; charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -15,9 +16,14 @@
 	href="<c:url value="/resources/styles/commons.css" />" type="text/css" />
 
 <!-- Dojo JS -->
+<script type="text/javascript">
+	var djConfig = {
+		parseOnLoad : true,
+		isDebug : true
+	};
+</script>
 <script type="text/javascript"
-	src="<c:url value="/resources/dojo/dojo.js"/>"
-	djConfig="parseOnLoad: true"></script>
+	src="<c:url value="/resources/dojo/dojo.js"/>"></script>
 <script type="text/javascript"
 	src="<c:url value="/resources/spring/Spring.js" />"></script>
 <script type="text/javascript"
@@ -38,15 +44,22 @@
 
 	<!-- PAGE's HEADER STARTS HERE  -->
 	<div class="header">
+		<tiles:insertAttribute name="language" />
 		<h1>Online CAD</h1>
-		<h2>Web Application for CAD development</h2>
+		<h2><fmt:message key="title.description"/></h2>
 	</div>
 	<!-- PAGE's MENU ENDS HERE  -->
-	<div class="navigation">
-		<ul id="menu">
-			<li class="selected"><a href="<c:url value="#"/>"
-				onclick="go(this.href);">Home</a></li>
-			<li><a href="<c:url value="#test"/>" onclick="go(this.href);">Test</a>
+	<div class="navigation" id="menu">
+		<ul >
+			<li class="selected">
+				<a href="<c:url value="#"/>" onclick="go(this.href);">Home</a></li>
+			<li>
+				<a href="<c:url value="#test"/>" onclick="go(this.href);">Test</a>
+			</li>
+		</ul>
+		<ul class="right">
+			<li>
+				<a href="<c:url value="#login"/>" onclick="go(this.href);">Login</a>
 			</li>
 		</ul>
 	</div>
@@ -97,7 +110,7 @@
 			$.history.init(function(action) {
 				if (action || action == '') {
 					load(action);
-					setCurrentInMenu(action);
+					setCurrentPageInMenu(action);
 				}
 			});
 		});
@@ -112,17 +125,23 @@
 			action = url.replace(/^.*#/, '');
 			$.history.load(action);
 		}
-		
-		function setCurrentInMenu(action) {
-			var menuLink = document.getElementById("menu")
+
+		function setCurrentPageInMenu(action) {
+			var menuLinks = document.getElementById("menu")
 					.getElementsByTagName("a");
-			for (x in menuLink) {
-				var res = menuLink[x].href.indexOf(action);
-				if (res <= 0) {
-					menuLink[x].parentNode.className = null;
-				} else {
-					menuLink[x].parentNode.className = "selected";
+			for (x in menuLinks) {
+				var element = menuLinks[x];
+				if (element.href) {
+					var result = element.href.indexOf(action);
+					if (result <= 0) {
+						element.parentNode.className = null;
+					} else {
+						element.parentNode.className = "selected";
+					}
 				}
+			}
+			if (action == '') {
+				menuLinks[0].parentNode.className = "selected";
 			}
 		}
 	</script>

@@ -97,10 +97,19 @@
 			<artifactId>spring-security-taglibs</artifactId>
 			<version>3.1.0.M1</version>
 		</dependency>
-		
+
+		<dependency>
+			<groupId>org.onlinecad.tag</groupId>
+			<artifactId>Tags</artifactId>
+			<version>0.1</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>jsp-api</artifactId>
+					<groupId>javax.servlet.jsp</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
 	</dependencies>
-
-
 
 	<repositories>
 	

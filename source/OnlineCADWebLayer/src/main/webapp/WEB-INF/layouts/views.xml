@@ -6,7 +6,9 @@
 <tiles-definitions>
 
 	<definition name="main-layout" template="/WEB-INF/layouts/mainLayout.jsp">
+		<put-attribute name="language" value="language-panel" />
 		<put-attribute name="main-container" value="" />
 	</definition>
 
+	<definition name="language-panel" template="/WEB-INF/layouts/languagePanel.jsp" />
 </tiles-definitions>

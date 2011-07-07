@@ -13,17 +13,15 @@
     
     <http pattern="/logout" security="none" />
     
-    <http auto-config="true">
+    <http  use-expressions="true">
     <!-- 
         <intercept-url pattern="/secure/admin/manage/" access="hasAnyRole('ROLE_ADMIN','ROLE_HR')" />
         <intercept-url pattern="/secure/hr/**" access="hasAnyRole('ROLE_ADMIN','ROLE_HR')" />
         <intercept-url pattern="/secure/admin/manage/usersMgm/pass/**" access="isAuthenticated()" />
         <intercept-url pattern="/secure/admin/**" access="hasRole('ROLE_ADMIN')" /> -->
         
-        <intercept-url pattern="/**" access="ROLE_ADMIN" />
-        
-        
-        
+        <intercept-url pattern="/**" access="permitAll" />
+        <form-login login-page="/login" default-target-url="/test" authentication-failure-url="/?err=1" />
         <logout logout-url="/onLogout" logout-success-url="/" invalidate-session="true" />
         <remember-me />
         <session-management invalid-session-url="/">
